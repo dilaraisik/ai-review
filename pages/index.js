@@ -2,6 +2,27 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
+/**
+ * Home component representing the Advanced Todo App.
+ *
+ * This React functional component implements a Todo application that enables users
+ * to add tasks, toggle their completion status, delete tasks, and filter them based on
+ * their completion state. Tasks are persisted using localStorage and state is managed
+ * using React hooks (useState and useEffect).
+ *
+ * Features:
+ * - Adding tasks: Creates a new task with a unique ID, text (trimmed), selected category,
+ *   and an initial incomplete status.
+ * - Toggling task completion: Inverts the completion state of a task identified by its ID.
+ * - Deleting tasks: Removes a task from the tasks list based on its ID.
+ * - Filtering tasks: Displays tasks filtered by the current filter: 'all', 'completed', or 'incomplete'.
+ *
+ * React Hooks:
+ * - useEffect: Loads tasks from localStorage on mount and saves tasks back whenever the tasks state changes.
+ * - useState: Manages state for task input, category selection, tasks array, and filter criteria.
+ *
+ * @returns {JSX.Element} The rendered Todo App user interface.
+ */
 export default function Home() {
   const [task, setTask] = useState('');
   const [category, setCategory] = useState('General');
